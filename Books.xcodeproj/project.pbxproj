@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2DE111B92CDA216E003631A2 /* ImportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE111B82CDA216E003631A2 /* ImportModel.swift */; };
 		2DE111BB2CDA2605003631A2 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DE111BA2CDA25FA003631A2 /* MockData.json */; };
+		2DE111BD2CDA483F003631A2 /* MockDataPreviewTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE111BC2CDA483F003631A2 /* MockDataPreviewTrait.swift */; };
 		BB43DA082C9388E100E110F1 /* BookCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43DA072C9388E100E110F1 /* BookCommentView.swift */; };
 		BB43DA0B2C93945800E110F1 /* TagStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43DA0A2C93945800E110F1 /* TagStyle.swift */; };
 		BB584BF42C94ED7A00267459 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB584BF32C94ED7A00267459 /* Launch Screen.storyboard */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2DE111B82CDA216E003631A2 /* ImportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportModel.swift; sourceTree = "<group>"; };
 		2DE111BA2CDA25FA003631A2 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
+		2DE111BC2CDA483F003631A2 /* MockDataPreviewTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataPreviewTrait.swift; sourceTree = "<group>"; };
 		BB43DA072C9388E100E110F1 /* BookCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCommentView.swift; sourceTree = "<group>"; };
 		BB43DA0A2C93945800E110F1 /* TagStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStyle.swift; sourceTree = "<group>"; };
 		BB584BF32C94ED7A00267459 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				2DE111BA2CDA25FA003631A2 /* MockData.json */,
 				2DE111B82CDA216E003631A2 /* ImportModel.swift */,
+				2DE111BC2CDA483F003631A2 /* MockDataPreviewTrait.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				BB9EE0D92C8E46B1000C5047 /* Color+Extension.swift in Sources */,
 				BB9EE0DA2C8E46B1000C5047 /* UIColor+Extension.swift in Sources */,
 				BB9EE0E32C8E4DA1000C5047 /* BooksTabView.swift in Sources */,
+				2DE111BD2CDA483F003631A2 /* MockDataPreviewTrait.swift in Sources */,
 				BB9EE0D62C8E461D000C5047 /* Genre.swift in Sources */,
 				BB9EE0D02C8E2EA0000C5047 /* Book.swift in Sources */,
 			);
