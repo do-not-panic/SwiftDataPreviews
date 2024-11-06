@@ -15,38 +15,47 @@
 import SwiftUI
 import SwiftData
 
+enum SortOrder: String, Identifiable, CaseIterable {
+    case book, genre
+    var id: Self { self }
+}
+
+enum FilterType: String, Identifiable, CaseIterable {
+    case book, genre, author
+    var id: Self { self }
+}
+
 struct BooksTabView: View {
-    @Query(sort: \Book.name) var books: [Book]
-    @State private var selectedBook: Book?
+    
+    @State private var sortOrder = SortOrder.book
+    @State private var filterType = FilterType.book
+    @State private var filter = ""
+    
     var body: some View {
         NavigationStack {
-            List(books) { book in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(book.name)
-                            .font(.title)
-                        Spacer()
-                        Text(book.genre.name)
-                            .tagStyle(genre: book.genre)
-                    }
-                    HStack {
-                        Text(book.allAuthors)
-                        Spacer()
-                        Button {
-                            selectedBook = book
-                        } label: {
-                            Image(systemName: "message")
-                                .symbolVariant(book.comment.isEmpty ? .none : .fill)
+            VStack {
+                HStack {
+                    Picker("Sort Order", selection: $sortOrder) {
+                        ForEach(SortOrder.allCases) { sortOrder in
+                            Text("Sort by \(sortOrder.rawValue.capitalized)")
                         }
-                        .buttonStyle(.plain)
+                    }
+                    Spacer()
+                    Picker("Filter Type", selection: $filterType) {
+                        ForEach(FilterType.allCases) { filterType in
+                            Text("Filter by \(filterType.rawValue.capitalized)")
+                        }
                     }
                 }
+                .buttonStyle(.bordered)
+                .padding(.horizontal)
+                BookListView(
+                    sortOrder: sortOrder,
+                    filterType: filterType,
+                    filter: filter
+                )
             }
-            .listStyle(.plain)
-            .sheet(item: $selectedBook) { book in
-                BookCommentView(book: book)
-                    .presentationDetents([.height(300)])
-            }
+            .searchable(text: $filter, prompt: "Enter search criteria")
             .navigationTitle("Books")
         }
     }
